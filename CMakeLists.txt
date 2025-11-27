@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
 
-project(roboSim)
+project(roboSim VERSION 0.1.0 LANGUAGES CXX)
 
 add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
 add_subdirectory(eigen-master EXCLUDE_FROM_ALL)
