@@ -1,0 +1,4 @@
+#ifndef RIGID_BODY_HPP
+#define RIGID_BODY_HPP
+
+#endif //RIGID_BODY_HPP

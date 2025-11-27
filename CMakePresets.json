@@ -1,0 +1,13 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "build_release",
+      "description": "build without debug info",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    }
+  ]
+}
