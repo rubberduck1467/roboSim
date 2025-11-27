@@ -1,3 +1,6 @@
 [submodule "vendored/SDL"]
 	path = vendored/SDL
 	url = https://github.com/libsdl-org/SDL.git
+[submodule "logger"]
+	path = logger
+	url = https://github.com/rubberduck1467/errorLogger.git
