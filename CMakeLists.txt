@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.25)
 
 project(roboSim)
 
+add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
+
 add_executable(roboSim)
 
 target_sources(roboSim
@@ -17,3 +19,8 @@ target_sources(roboSim
                 FILES
                         include/rigidBody.hpp
 )
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+
+target_link_libraries(roboSim PRIVATE SDL3::SDL3)
