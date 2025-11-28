@@ -17,7 +17,7 @@ class RigidBody_2d {
                 double angularMomentum;
                 double angularVelocity;
                 // 0 is dead right
-                double angularPositon;
+                double angularPosition;
                 double momentOfInertia;
 
                 RigidBody_2d(double mass, double momentOfInertia);

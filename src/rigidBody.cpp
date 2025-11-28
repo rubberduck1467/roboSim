@@ -10,7 +10,7 @@ RigidBody_2d::RigidBody_2d(double mass, double momentOfInertia)
 
         this->angularMomentum = 0;
         this->angularVelocity = 0;
-        this->angularPositon = 0;
+        this->angularPosition = 0;
         this->momentOfInertia = 0;
 }
 
