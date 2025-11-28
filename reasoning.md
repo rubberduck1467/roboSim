@@ -15,4 +15,5 @@ Entries are categorized by type and organized alphabetically.
 *   I would like to have an optional graphical component.
 *   We will not use SDL callbacks since we would like to use SDL as an optional graphical component.
 
-
+## Math
+* Momentum is used instead of acceleration to reduce calculations and hopefully work better with collisions.
