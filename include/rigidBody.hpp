@@ -22,7 +22,7 @@ class RigidBody_2d {
 
                 RigidBody_2d(double mass, double momentOfInertia);
 
-                Eigen::Vector2d updatePos(std::vector<Eigen::Vector2d> forces);
+                Eigen::Vector2d updatePos(std::vector<Eigen::Vector2d> forces, int updateRate);
 };
 
 #endif //RIGID_BODY_HPP

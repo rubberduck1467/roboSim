@@ -16,11 +16,6 @@ struct configInfo {
 
 int main(int argc, char **argv) 
 {
-        RigidBody_2d testBody(1, 1); 
-        Eigen::Vector2d vec1(0,10);
-        Eigen::Vector2d vec2(10,0);
-        testBody.updatePos({vec1, vec2});
-        return 0;
         using Clock = std::chrono::steady_clock;
 
         // config
@@ -37,15 +32,23 @@ int main(int argc, char **argv)
                 }
         }
         
+
+        RigidBody_2d testBody(1,1);
+        int testCounter = 0;
         //main loop
         auto lastTime = Clock::now().time_since_epoch().count();
+        std::vector testForces ={Eigen::Vector2d(1,0)};
+        testBody.updatePos(testForces, config.updateRate);
+
         while (true) 
         {
                 auto newTime = Clock::now().time_since_epoch().count();
                 // do an update if enough time has passed
                 if ((config.updateRate*(newTime - lastTime)/config.clockTickRate) == 1)
                 {
-                        std::cerr << "I did an update!\n";
+                        testBody.updatePos({},config.updateRate);
+                        std::cout << testBody.position(0) << "," << testBody.position(1) << "\n";
+
                         lastTime = Clock::now().time_since_epoch().count();
                 }
         }
