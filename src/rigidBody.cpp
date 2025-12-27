@@ -27,3 +27,17 @@ Eigen::Vector2d RigidBody_2d::updatePos(std::vector<Eigen::Vector2d> forces, int
         this->position += velocity/updateRate;
         return this->position;
 }
+
+double RigidBody_2d::updateAng(std::vector<double> torques, int updateRate)
+{
+        double torqueMag = 0;
+        for (double torque : torques)
+        {
+                torqueMag += torque;
+        }
+        this->angularMomentum += torqueMag;
+        this->angularVelocity = this->angularMomentum / this->momentOfInertia;
+        this->angularPosition += angularVelocity/updateRate;
+        return this->angularPosition;
+}
+
