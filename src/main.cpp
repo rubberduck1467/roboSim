@@ -11,7 +11,7 @@
 struct configInfo {
         int clockTickRate; // in ticks per second. Calcuated value.
         int updateRate; // in ticks per second. default is 100.
-
+        bool doGraphics;
 };
 
 int main(int argc, char **argv) 
@@ -23,12 +23,17 @@ int main(int argc, char **argv)
 
         config.clockTickRate = Clock::period::den;
         config.updateRate = 100;
+        config.doGraphics = false;
 
         for (int iii = 0; iii < argc; iii++)
         {
                 if (!strcmp("--updateRate", argv[iii]))
                 {
                         config.updateRate = atoi(argv[++iii]);
+                }
+                if (!strcmp("--doGraphics", argv[iii]))
+                {
+                        config.doGraphics = true;
                 }
         }
         
@@ -50,6 +55,11 @@ int main(int argc, char **argv)
                         std::cout << testBody.position(0) << "," << testBody.position(1) << "\n";
 
                         lastTime = Clock::now().time_since_epoch().count();
+
+                        if (config.doGraphics)
+                        {
+                                ;//draw with sdl
+                        }
                 }
         }
         return 0;
